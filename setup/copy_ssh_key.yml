@@ -1,0 +1,13 @@
+---
+
+- name: Install_ssh_key
+  hosts: all
+  connection: ssh
+
+  tasks:
+    - name: Install public SSH key
+      ansible.posix.authorized_key:
+        user: student
+        state: present
+        key: "{{ lookup('file', key) }}"
+

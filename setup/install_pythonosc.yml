@@ -1,0 +1,16 @@
+---
+- name: Force-install python-osc with pip (no venv)
+  hosts: all
+  become: true
+  tasks:
+
+    - name: Ensure pip is installed
+      apt:
+        name:
+          - python3-pip
+          - python3-setuptools
+          - python3-wheel
+        state: present
+
+    - name: Install python-osc using pip system-wide
+      command: pip3 install python-osc --break-system-packages
