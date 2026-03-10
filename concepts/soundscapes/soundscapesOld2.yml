@@ -1,0 +1,69 @@
+---
+- name: Start fully connected Jacktrip Mesh
+  hosts: bikes
+  gather_facts: false
+
+  vars:
+    soundscape: "rainforest"
+    base_port: 4464
+
+  tasks:
+    - name: Kill all SuperCollider things
+      command: killall -9 sclang scsynth
+      ignore_errors: true
+
+    - name: Kill p2psc
+      command: killall -9 p2psc
+      ignore_errors: true
+
+    - name: Kill all JackTrip things
+      command: killall -9 jacktrip
+      ignore_errors: true
+
+    - name: Kill all qjacks
+      command: killall -9 qjackctl
+      ignore_errors: true
+
+    - name: Kill all jackd things
+      command: killall -9 jackd
+      ignore_errors: true
+
+    - name: Kill all python3 things
+      command: killall -9 python3
+      ignore_errors: true
+
+    - name: Start p2psc
+      shell: |
+        nohup p2psc > ./logs/p2psc.log 2>&1 &
+      args:
+        chdir: "{{ playbook_dir }}"
+      async: 2592000
+      poll: 0
+
+    - name: Pause briefly to let p2psc start
+      pause:
+        seconds: 2
+
+    - name: Run SC script
+      shell: |
+        export DISPLAY=:0.0
+        nohup sclang ./GUIListener.scd "{{ soundscape }}" > ./logs/GUIListener.log 2>&1 &
+      args:
+        chdir: "{{ playbook_dir }}"
+      async: 2592000
+      poll: 0
+
+    - name: Pause briefly after SC start
+      pause:
+        seconds: 2
+
+    - name: Launch GUI script
+      shell: |
+        sudo -u {{ inventory_hostname }} env \
+          DISPLAY=:0 \
+          XAUTHORITY=/home/{{ inventory_hostname }}/.Xauthority \
+          nohup python3 ./PixelGUI.py "{{ soundscape }}" > ./logs/PixelGUI.log 2>&1 &
+      args:
+        chdir: "{{ playbook_dir }}"
+      async: 2592000
+      poll: 0
