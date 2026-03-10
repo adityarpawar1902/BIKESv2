@@ -1,0 +1,49 @@
+---
+- name: Replace remote folder with local folder and show progress
+  hosts: all
+  become: false
+
+# ADD FLAG "-f 1" to set forks to 1. WIll show progress per pi. very helpful
+
+  vars:
+    # Passed via -e:
+    # local_folder=/path/to/local/folder
+    # desktop_subfolder=FolderName
+    # final path = /home/<USER>/Desktop/FolderName
+
+    #EXAMPLE:  ansible-playbook -i config/bees.ini setup/rsync_folder.yml -e "local_folder=$(pwd) desktop_subfolder=MESH"
+
+    remote_folder: "{{ ansible_env.HOME }}/Desktop/{{ desktop_subfolder }}"
+
+  tasks:
+
+    - name: Ensure required variables are provided
+      assert:
+        that:
+          - local_folder is defined
+          - desktop_subfolder is defined
+        fail_msg: >
+          Missing required variables!
+          Example:
+          -e "local_folder=/path desktop_subfolder=FOLDER"
+
+    - name: Delete remote folder if it exists
+      file:
+        path: "{{ remote_folder }}"
+        state: absent
+
+    - name: Recreate empty remote folder
+      file:
+        path: "{{ remote_folder }}"
+        state: directory
+
+    - name: Rsync local folder to remote folder (with progress bar)
+      synchronize:
+        src: "{{ local_folder }}/"
+        dest: "{{ remote_folder }}/"
+        recursive: yes
+        delete: no         # safe since folder was just removed
+        mode: push
+        rsync_opts:
+          - "--info=progress2"
+          - "--human-readable"

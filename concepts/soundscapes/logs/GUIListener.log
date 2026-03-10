@@ -1,0 +1,188 @@
+compiling class library...
+Path override failed for key base::DIR_APP_DICTIONARIES and path '/Applications/SuperCollider.app/Contents/MacOS/qtwebengine_dictionaries'
+	Found 867 primitives.
+	Compiling directory '/Applications/SuperCollider.app/Contents/Resources/SCClassLibrary'
+	Compiling directory '/Users/orlando/Library/Application Support/SuperCollider/Extensions'
+	Compiling directory '/Users/orlando/Library/Application Support/SuperCollider/downloaded-quarks/p2psc'
+	Compiling directory '/Users/orlando/Library/Application Support/SuperCollider/downloaded-quarks/PitchShiftPA'
+	Compiling directory '/Users/orlando/Library/Application Support/SuperCollider/downloaded-quarks/MathLib'
+	Compiling directory '/Users/orlando/Library/Application Support/SuperCollider/downloaded-quarks/FileLog'
+	Compiling directory '/Users/orlando/Library/Application Support/SuperCollider/downloaded-quarks/ExtraWindows'
+	Compiling directory '/Users/orlando/Library/Application Support/SuperCollider/downloaded-quarks/SignalBox'
+	Compiling directory '/Users/orlando/Library/Application Support/SuperCollider/downloaded-quarks/Hilbert'
+	Compiling directory '/Users/orlando/Library/Application Support/SuperCollider/downloaded-quarks/XML'
+	Compiling directory '/Users/orlando/Library/Application Support/SuperCollider/downloaded-quarks/wslib'
+	Compiling directory '/Users/orlando/Library/Application Support/SuperCollider/downloaded-quarks/MatrixArray'
+	Compiling directory '/Users/orlando/Library/Application Support/SuperCollider/downloaded-quarks/PointView'
+	Compiling directory '/Users/orlando/Library/Application Support/SuperCollider/downloaded-quarks/SphericalDesign'
+	Compiling directory '/Users/orlando/Library/Application Support/SuperCollider/downloaded-quarks/atk-sc3'
+	Compiling directory '/Users/orlando/Library/Application Support/SuperCollider/downloaded-quarks/redUniverse'
+WARNING: Could not open directory: '/Users/orlando/Library/Application Support/SuperCollider/downloaded-quarks/3Dj'
+	To resolve this, either create the directory or remove it from your compilation paths.
+
+WARNING: Could not open directory: '/Users/orlando/Library/Application Support/SuperCollider/downloaded-quarks/APCmini'
+	To resolve this, either create the directory or remove it from your compilation paths.
+
+	Compiling directory '/Users/orlando/Library/Application Support/SuperCollider/downloaded-quarks/SC-HOA'
+WARNING: Could not open directory: '/Users/orlando/Library/Application Support/SuperCollider/downloaded-quarks/SATIE'
+	To resolve this, either create the directory or remove it from your compilation paths.
+
+	numentries = 1729699 / 37355018 = 0.046
+	8651 method selectors, 4318 classes
+	method table size 33268832 bytes, big table size 298840144
+	Number of Symbols 22333
+	Byte Code Size 908129
+	compiled 943 files in 0.51 seconds
+
+Info: 5 methods are currently overwritten by extensions. To see which, execute:
+MethodOverride.printAll
+
+compile done
+localhost : setting clientID to 0.
+internal : setting clientID to 0.
+Class tree inited in 0.01 seconds
+
+
+*** Welcome to SuperCollider 3.14.0-dev. *** For help type cmd-d.
+Booting server 'localhost' on address 127.0.0.1:57110.
+Number of Devices: 24
+   0 : "SAMSUNG"
+   1 : "BlackHole 2ch"
+   2 : "MacBook Pro Microphone"
+   3 : "MacBook Pro Speakers"
+   4 : "Microsoft Teams Audio"
+   5 : "Pro Tools Audio Bridge 16"
+   6 : "Pro Tools Audio Bridge 2-A"
+   7 : "Pro Tools Audio Bridge 2-B"
+   8 : "Pro Tools Audio Bridge 32"
+   9 : "Pro Tools Audio Bridge 64"
+   10 : "Pro Tools Audio Bridge 6"
+   11 : "Pro Tools Aggregate I/O"
+   12 : "ZoomAudioD"
+   13 : "Aggregate Device"
+   14 : "TEST"
+   15 : "Aggregate Device"
+   16 : "Aggregate Device 3"
+   17 : "INTERNAL"
+   18 : "MEAT"
+   19 : "Multi-Output Device"
+   20 : "BUTCH"
+   21 : "bangarang"
+   22 : "HOME STUDIO"
+   23 : "earpods + blackchannel"
+
+"MacBook Pro Microphone" Input Device
+   Streams: 1
+      0  channels 1
+
+"MacBook Pro Speakers" Output Device
+   Streams: 1
+      0  channels 2
+
+SC_AudioDriver: sample rate = 44100.000000, driver's block size = 512
+SuperCollider 3 server ready.
+Requested notification messages from server 'localhost'
+localhost: server process's maxLogins (1) matches with my options.
+localhost: keeping clientID (0) as confirmed by server process.
+Shared memory server interface initialized
+WARNING: keyword arg 'trig' not found in call to Meta_PlayBuf:ar
+WARNING: keyword arg 'trig' not found in call to Meta_PlayBuf:ar
+Grid clicked: 1, 0
+rSoundPitch
+Loaded: ./media/samples/harbor/soundmark/2.wav
+Playing: soundmark 2
+Grid clicked: 1, 2
+pathTrigger
+soundmark
+0
+Rand
+Grid clicked: 2, 2
+rSound
+Loaded: ./media/samples/harbor/soundmark/0.wav
+Playing: soundmark 0
+Buffer UGen channel mismatch: expected 1, yet buffer has 2 channels
+Grid clicked: 3, 2
+pathTrigger
+soundmark
+0
+Rand
+Grid clicked: 3, 1
+pathTrigger
+soundmark
+2
+sent p2psc msg
+Grid clicked: 4, 1
+rSoundReverb
+Loaded: ./media/samples/harbor/soundmark/0.wav
+Playing: soundmark 0
+Grid clicked: 4, 2
+rSound
+Loaded: ./media/samples/harbor/soundmark/3.wav
+Playing: soundmark 3
+Buffer UGen channel mismatch: expected 1, yet buffer has 2 channels
+Grid clicked: 2, 1
+pathTrigger
+soundmark
+3
+Rand
+Grid clicked: 2, 1
+pathTrigger
+soundmark
+3
+Rand
+Grid clicked: 0, 1
+pathTrigger
+soundmark
+0
+Rand
+Grid clicked: 0, 1
+pathTrigger
+soundmark
+0
+Rand
+Grid clicked: 0, 0
+rSoundReverb
+Loaded: ./media/samples/harbor/soundmark/3.wav
+Playing: soundmark 3
+Grid clicked: 0, 0
+rSoundReverb
+Loaded: ./media/samples/harbor/soundmark/1.wav
+Playing: soundmark 1
+Grid clicked: 1, 0
+rSoundPitch
+Loaded: ./media/samples/harbor/soundmark/3.wav
+Playing: soundmark 3
+Grid clicked: 1, 0
+rSoundPitch
+Loaded: ./media/samples/harbor/soundmark/1.wav
+Playing: soundmark 1
+Grid clicked: 1, 1
+rSound
+Loaded: ./media/samples/harbor/soundmark/0.wav
+Playing: soundmark 0
+Buffer UGen channel mismatch: expected 1, yet buffer has 2 channels
+Grid clicked: 1, 1
+rSound
+Loaded: ./media/samples/harbor/soundmark/3.wav
+Playing: soundmark 3
+Buffer UGen channel mismatch: expected 1, yet buffer has 2 channels
+Grid clicked: 1, 1
+rSound
+Loaded: ./media/samples/harbor/soundmark/0.wav
+Playing: soundmark 0
+Buffer UGen channel mismatch: expected 1, yet buffer has 2 channels
+late 888.043041437
+late 827.894861437
+late 767.748841437
+late 707.602820437
+late 647.456800437
+late 587.310780437
+late 527.164760437
+late 467.018740437
+late 406.872719437
+late 346.726699437
+late 286.580679437
+late 226.434658437
+late 166.288638437
+late 106.142618437
+late 45.996597437

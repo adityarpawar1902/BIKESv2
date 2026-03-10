@@ -1,0 +1,49 @@
+---
+- name: Start SuperCollider P2PSC test
+  hosts: all
+  gather_facts: false
+
+  tasks:
+
+  - name: Kill existing SuperCollider processes
+    command: killall -9 sclang scsynth
+    ignore_errors: true
+
+  - name: Kill JackTrip processes
+    command: killall -9 jacktrip
+    ignore_errors: true
+
+  - name: Kill qjackctl
+    command: killall -9 qjackctl
+    ignore_errors: true
+
+  - name: Kill jackd
+    command: killall -9 jackd
+    ignore_errors: true
+  
+  - name: Kill p2psc
+    command: killall -9 p2psc
+    ignore_errors: true
+
+  - name: Create log file
+    shell: |
+      mkdir -p $HOME/Desktop
+      touch $HOME/Desktop/sc.log
+
+  - name: p2psc
+    shell: |
+      p2psc
+    async: 2592000
+    poll: 0
+
+  - name: Pause briefly to let p2psc start
+    pause:
+      seconds: 2
+  
+  - name: Run SuperCollider test script
+    shell: |
+      export DISPLAY=:0.0
+      cd $HOME/Desktop/BIKES/supercollider
+      sclang testP2psc.scd >> $HOME/Desktop/sc.log 2>&1
+    async: 2592000
+    poll: 0
