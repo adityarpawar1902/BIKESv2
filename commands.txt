@@ -1,9 +1,3 @@
-ansible-playbook -i utility/config/bikes.ini utility/ping.yml
-ansible-playbook -i config/bikes.ini sync_scripts.yml
-ansible-playbook -i config/bikes.ini setup/install_p2psc.yml
-ansible-playbook -i config/bikes.ini concepts/p2pscTest.yml
-
-STEP 1:
-SYNC SCRIPTS 
-
-STEP 2: 
+ansible-playbook -i ./utility/config/bikes.ini utility/ping.yml
+ansible-playbook -k -i ./utility/config/bikes.ini sync_folder.yml 
+ansible-playbook -k -i ./utility/config/bikes.ini concepts/soundscapes/soundscapes.yml -e soundscape="marine"
